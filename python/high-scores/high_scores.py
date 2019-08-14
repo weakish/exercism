@@ -15,7 +15,7 @@ def latest(scores):
 
 
 def personal_best(scores):
-    return max(scores, default=None)
+    return max(scores, default=0)
 
 
 def personal_top_three(scores):
