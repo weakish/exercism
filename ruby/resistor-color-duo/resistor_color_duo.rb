@@ -1,5 +1,6 @@
 module ResistorColorDuo
-  def self.value(first_color, second_color)
+  def self.value(colors)
+    first_color, second_color = colors
     color_number_map = {"Black" => 0,
       "Brown" => 1,
       "Red" => 2,
