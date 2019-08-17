@@ -1,12 +1,14 @@
+from io import BytesIO
+
 import numpy as np
 
 
 class Matrix(object):
     def __init__(self, matrix_string):
-        self.value = np.matrix(matrix_string.replace("\n", ";"))
+        self.value = np.loadtxt(BytesIO(matrix_string.encode()), dtype="int", ndmin=2)
 
     def row(self, index):
-        return self.value[index - 1].tolist()[0]
+            return list(self.value[index - 1, ...])
 
     def column(self, index):
-        return self.value.T[index - 1].tolist()[0]
+            return list(self.value[..., index - 1])
