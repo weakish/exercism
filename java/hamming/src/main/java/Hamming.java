@@ -1,18 +1,20 @@
-import main.java.StrandLengthMismatchException;
-
 class Hamming {
 
     private String left;
     private String right;
     private int strandLength;
 
-    Hamming(String leftStrand, String rightStrand) throws StrandLengthMismatchException {
-        if (leftStrand.length() == rightStrand.length()) {
+    Hamming(String leftStrand, String rightStrand) {
+        if (leftStrand == "") {
+            throw new IllegalArgumentException("left strand must not be empty.");
+        } else if (rightStrand == "") {
+            throw new IllegalArgumentException("right strand must not be empty.");
+        } else if (leftStrand.length() != rightStrand.length()) {
+            throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
+        } else {
             left = leftStrand;
             right = rightStrand;
             strandLength = leftStrand.length();
-        } else {
-            throw new StrandLengthMismatchException("leftStrand and rightStrand length mismatch");
         }
     }
 
