@@ -12,6 +12,6 @@ module ResistorColorDuo
       "grey" => 8,
       "white" => 9,
     }
-    "#{color_number_map[first_color]}#{color_number_map[second_color]}"
+    Integer("#{color_number_map[first_color]}#{color_number_map[second_color]}")
   end
 end
