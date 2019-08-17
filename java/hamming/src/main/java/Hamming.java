@@ -5,16 +5,18 @@ class Hamming {
     private int strandLength;
 
     Hamming(String leftStrand, String rightStrand) {
-        if (leftStrand == "") {
-            throw new IllegalArgumentException("left strand must not be empty.");
-        } else if (rightStrand == "") {
-            throw new IllegalArgumentException("right strand must not be empty.");
-        } else if (leftStrand.length() != rightStrand.length()) {
-            throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
-        } else {
+        if (leftStrand.length() == rightStrand.length()) {
             left = leftStrand;
             right = rightStrand;
             strandLength = leftStrand.length();
+        } else {
+            if (leftStrand.length() == 0) {
+                throw new IllegalArgumentException("left strand must not be empty.");
+            } else if (rightStrand.length() == 0) {
+                throw new IllegalArgumentException("right strand must not be empty.");
+            } else {
+                throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
+            }
         }
     }
 
