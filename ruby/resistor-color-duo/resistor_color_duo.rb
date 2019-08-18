@@ -9,7 +9,7 @@ module ResistorColorDuo
     "violet" => 7,
     "grey" => 8,
     "white" => 9,
-  }
+  }.freeze
 
   def self.value(colors)
     colors.map { |color| COLOR_NUMBER_MAP[color] }.join.to_i
