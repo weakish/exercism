@@ -12,6 +12,6 @@ module ResistorColorDuo
   }
 
   def self.value(colors)
-    Integer("#{COLOR_NUMBER_MAP[colors[0]]}#{COLOR_NUMBER_MAP[colors[1]]}")
+    colors.map { |color| COLOR_NUMBER_MAP[color] }.join.to_i
   end
 end
