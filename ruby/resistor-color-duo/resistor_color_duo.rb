@@ -12,7 +12,6 @@ module ResistorColorDuo
   }
 
   def self.value(colors)
-    first_color, second_color = colors
-    Integer("#{COLOR_NUMBER_MAP[first_color]}#{COLOR_NUMBER_MAP[second_color]}")
+    Integer("#{COLOR_NUMBER_MAP[colors[0]]}#{COLOR_NUMBER_MAP[colors[1]]}")
   end
 end
