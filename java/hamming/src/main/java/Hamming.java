@@ -5,19 +5,20 @@ class Hamming {
     private int strandLength;
 
     Hamming(String leftStrand, String rightStrand) {
-        if (leftStrand.length() == rightStrand.length()) {
-            left = leftStrand;
-            right = rightStrand;
-            strandLength = leftStrand.length();
-        } else {
+        if (leftStrand.length() != rightStrand.length()) {
+            String errorMessage;
             if (leftStrand.length() == 0) {
-                throw new IllegalArgumentException("left strand must not be empty.");
+                errorMessage = "left strand must not be empty.";
             } else if (rightStrand.length() == 0) {
-                throw new IllegalArgumentException("right strand must not be empty.");
+                errorMessage = "right strand must not be empty.";
             } else {
-                throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
+                errorMessage = "leftStrand and rightStrand must be of equal length.";
             }
-        }
+            throw new IllegalArgumentException(errorMessage);
+        }    
+        left = leftStrand;
+        right = rightStrand;
+        strandLength = leftStrand.length();
     }
 
     int getHammingDistance() {
